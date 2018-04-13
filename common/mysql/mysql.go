@@ -39,7 +39,7 @@ func DB() (*sql.DB, error) {
 
 func Refresh() {
 	once.Do(func() {
-		db, err = sql.Open("mysql", config.MYSQL_CONN_STR+"/"+config.DB_NAME+"?charset=utf8")
+		db, err = sql.Open("mysql", config.MYSQL_CONN_STR+"/"+config.DB_NAME+"?charset=utf8mb4")
 		if err != nil {
 			logs.Log.Error("Mysql：%v\n", err)
 			return

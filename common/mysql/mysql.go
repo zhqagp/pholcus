@@ -99,7 +99,7 @@ func (self *MyTable) Create() error {
 	for _, title := range self.columnNames {
 		self.sqlCode += title[0] + ` ` + title[1] + `,`
 	}
-	self.sqlCode = self.sqlCode[:len(self.sqlCode)-1] + `) ENGINE=MyISAM DEFAULT CHARSET=utf8;`
+	self.sqlCode = self.sqlCode[:len(self.sqlCode)-1] + `) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;`
 
 	maxConnChan <- true
 	defer func() {

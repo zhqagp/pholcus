@@ -57,7 +57,7 @@ func init() {
 						table.AddColumn(title + ` MEDIUMTEXT`)
 					}
 					if self.Spider.OutDefaultField() {
-						table.AddColumn(`Url VARCHAR(255)`, `ParentUrl VARCHAR(255)`, `DownloadTime VARCHAR(50)`)
+						table.AddColumn(`Url VARCHAR(1024)`, `ParentUrl VARCHAR(1024)`, `DownloadTime VARCHAR(50)`)
 					}
 					if err := table.Create(); err != nil {
 						logs.Log.Error("%v", err)

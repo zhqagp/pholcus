@@ -90,7 +90,7 @@ func (self *Success) flush(provider string) (sLen int, err error) {
 		table, ok := getWriteMysqlTable(self.tabName)
 		if !ok {
 			table = mysql.New()
-			table.SetTableName(self.tabName).CustomPrimaryKey(`id VARCHAR(250) NOT NULL PRIMARY KEY`)
+			table.SetTableName(self.tabName).CustomPrimaryKey(`id VARCHAR(100) NOT NULL PRIMARY KEY`)
 			err = table.Create()
 			if err != nil {
 				return sLen, fmt.Errorf(" *     Fail  [添加成功记录][mysql]: %v 条 [ERROR]  %v\n", sLen, err)
